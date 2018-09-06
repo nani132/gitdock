@@ -1,0 +1,16 @@
+---
+- name: Install Docker
+  yum:
+   name: docker
+   state: latest
+  notify: Restart Docker Service
+
+- name: restart docker
+  service:
+   name: docker
+   state: restarted
+
+
+- name: set Bridged Network for container to communicate to eacj other
+  command: docker network create brdgnet1
+  ignore_errors: yes

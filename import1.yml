@@ -1,5 +1,0 @@
----
-- hosts: all
-  become: true
-  tasks:
-  - import_tasks: import2.yml 
